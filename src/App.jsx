@@ -103,11 +103,64 @@ function App() {
     },
   ];
 
-  const certifications = [
-    "Internship in Full Stack Web Development – Galwin Tech",
-    "Internship in Java Full Stack – Intranaiz Plasmid",
-    "Internship in Spring Boot – Codesoft",
-  ];
+    const certifications = [
+  {
+    title: "SQL for Beginners",
+    provider: "Alison",
+    type: "Course",
+    date: "Certificate",
+    image: "/certificates/sql-for-beginners.jpg",
+  },
+  {
+    title: "Java Internship",
+    provider: "Plasmid",
+    type: "Internship",
+    date: "August 2025 – October 2025",
+    image: "/certificates/java-plasmid.jpg",
+  },
+  {
+    title: "Artificial Intelligence",
+    provider: "CodSoft",
+    type: "Internship",
+    date: "10 Feb 2025 – 10 Mar 2025",
+    image: "/certificates/artificial-intelligence.jpg",
+  },
+  {
+    title: "Java Programming",
+    provider: "Great Learning Academy",
+    type: "Course",
+    date: "October 2024",
+    image: "/certificates/java-programming.jpg",
+  },
+  {
+    title: "Full Stack Web Development",
+    provider: "Galvin Technology",
+    type: "Internship",
+    date: "12 Feb 2025 – 12 Mar 2025",
+    image: "/certificates/full-stack-galvin.jpg",
+  },
+  {
+    title: "Angular",
+    provider: "Infosys",
+    type: "Course",
+    date: "August 2026",
+    image: "/certificates/angular-infosys.jpg",
+  },
+  {
+    title: "Java for Beginners",
+    provider: "Infosys",
+    type: "Course",
+    date: "July 2026",
+    image: "/certificates/java-beginners-infosys.jpg",
+  },
+  {
+    title: "Spring Microservices",
+    provider: "Infosys",
+    type: "Course",
+    date: "August 2026",
+    image: "/certificates/spring-microservices-infosys.png",
+  },
+];
 
   return (
     <div className="portfolio">
@@ -472,38 +525,91 @@ function App() {
         </section>
 
         {/* ================= CERTIFICATIONS ================= */}
-        <section className="section certification-section">
-          <div className="section-container">
+       {/* ================= CERTIFICATIONS ================= */}
 
-            <div className="section-heading">
-              <p>CERTIFICATIONS</p>
-              <h2>Learning & Certifications</h2>
-            </div>
+<section
+  id="certifications"
+  className="section certification-section"
+>
+  <div className="section-container">
 
-            <div className="certification-grid">
+    <div className="section-heading">
+      <p>CERTIFICATIONS</p>
 
-              {certifications.map((certificate, index) => (
-                <div
-                  className="certificate-card"
-                  key={certificate}
-                >
-                  <span>
-                    0{index + 1}
-                  </span>
+      <h2>Learning & Certifications</h2>
 
-                  <h3>{certificate}</h3>
+      <span>
+        Professional courses, internships and technical
+        certifications related to my development journey.
+      </span>
+    </div>
 
-                  <p>
-                    Professional training and internship experience.
-                  </p>
-                </div>
-              ))}
 
-            </div>
+    <div className="certification-grid">
+
+      {certifications.map((certificate, index) => (
+
+        <div
+          className="certificate-card"
+          key={certificate.title}
+        >
+
+          {/* Certificate Image */}
+
+          <div className="certificate-image">
+
+            <img
+              src={certificate.image}
+              alt={`${certificate.title} Certificate`}
+            />
 
           </div>
-        </section>
 
+
+          {/* Certificate Details */}
+
+          <div className="certificate-content">
+
+            <div className="certificate-number">
+              {String(index + 1).padStart(2, "0")}
+            </div>
+
+            <h3>
+              {certificate.title}
+            </h3>
+
+            <p className="certificate-provider">
+              {certificate.provider}
+            </p>
+
+            <p className="certificate-meta">
+              {certificate.type}
+              {" • "}
+              {certificate.date}
+            </p>
+
+
+            {/* View Certificate */}
+
+            <a
+              href={certificate.image}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="certificate-button"
+            >
+              View Certificate ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+</section>
         {/* ================= CONTACT ================= */}
         <section id="contact" className="section contact-section">
           <div className="section-container">
